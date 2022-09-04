@@ -13,14 +13,14 @@ const Home = ()=>{
   },[])
 
   const getUsers = async ()=>{
-    const response = await axios.get("http://localhost:5000/users/USERADD");
+    const response = await axios.get("https://crud-7475.herokuapp.com/users/USERADD");
     if(response.status===200){
       setData(response.data);
     }
   };
   const onDeleteUser =  async (id) =>{
     if(window.confirm("Are your sure you want to Delete")){
-      const response = await axios.delete(`http://localhost:5000/users/${id}`);
+      const response = await axios.delete(`https://crud-7475.herokuapp.com/users/${id}`);
       if(response.status==200){
         toast.success(response.data);
         getUsers();

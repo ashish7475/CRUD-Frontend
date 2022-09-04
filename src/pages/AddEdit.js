@@ -18,7 +18,7 @@ const AddEdit = ()=>{
   const navigate = useNavigate()
 
   const addUser = async (data) =>{
-      const response = await axios.post("http://localhost:5000/users",data);
+      const response = await axios.post("https://crud-7475.herokuapp.com/users",data);
       if(response.status==200){
         toast.success(response.data);
       }
@@ -32,14 +32,14 @@ const AddEdit = ()=>{
   },[id])
 
   const getSingleUser = async (id)=>{
-    const response  = await axios.get(`http://localhost:5000/users/${id}`)
+    const response  = await axios.get(`https://crud-7475.herokuapp.com/users/${id}`)
     if(response.status===200){
 
       setState({...response.data})
     }
   }
   const updateUser = async (data,id)=>{
-    const response  = await axios.patch(`http://localhost:5000/users/${id}`,data)
+    const response  = await axios.patch(`https://crud-7475.herokuapp.com/users/${id}`,data)
     if(response.status===200){
        toast.success(response.data);
     }

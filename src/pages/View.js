@@ -17,7 +17,7 @@ const View = ()=>{
  },[id])
 
  const getSingleUser = async (id)=>{
-   const response  = await axios.get(`http://localhost:5000/users/${id}`)
+   const response  = await axios.get(`https://crud-7475.herokuapp.com/users/${id}`)
    if(response.status===200){
 
      setUser({...response.data})
